@@ -1,0 +1,25 @@
+<div data-sly-use.attrs="${'options-item/getAttribute.js' @ names = ['classSection', 'classLink']}" data-sly-unwrap></div>
+<div data-sly-test.author="${(wcmmode.edit || wcmmode.design) && !(properties.heading)}" data-sly-unwrap>
+  <pre><center> Click here to edit Flights Options Item component </center></pre>
+</div>
+<div data-sly-test="${properties.target=='true'}" data-sly-unwrap>
+  <div data-sly-test.target="_blank" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${properties.target=='false'}" data-sly-unwrap>
+  <div data-sly-test.target="_self" data-sly-unwrap></div>
+</div>
+<div data-sly-test="${!author}" data-sly-unwrap>
+  <div class="test-section ${attrs.classSection}">
+    <div class="section-container">
+      <div class="section-title">
+        <h4>${properties.heading}</h4>
+      </div>
+      <div class="section-content">
+        <p>${properties.text @ context='html'}</p>
+      </div>
+      <div class="button-section">
+        <a role="link" class="button primary-alt ${attrs.classLink}" href="#" data-logged-multi-url="${properties.multiUrl}" data-logged-single-url="${properties.singleUrl}" data-guest-url="${properties.guestUrl}" data-logged-expired="${properties.loggedExpired}" target="${target}" data-cta-logged="${properties.ctaLogged}">${properties.ctaText}</a>
+      </div>
+    </div>
+  </div>
+</div>
